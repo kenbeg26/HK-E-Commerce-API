@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "abcce0b0-9ece-4b62-ba84-273ef472d39b",
+		"name": "Session 52 - Products CRUD Requirements",
+		"description": "**Product CRUD**\n\n**Add your credentials when you see these:**\n\n- _token_\n    \n- _id_\n    \n- _batch#_\n    \n\nsample of json body (adding your batch number):\n\n{\n\n\"batch_number\": 422\n\n}\n\n_**NOTE:**_\n\n- _**The Api-Key (in Auth), and batch# are for tracking only. It is not part of the requirements of your capstone 2.**_\n    \n- _**This is for demonstration only of your capstone 2.**_\n    \n- _**Make**_ _**sure to check the route and payload requirements and the output of each endpoint.**_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42921807"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "create-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDMwNzY0OTB9.mvFk3gDXC8LBcKTgyE3TAYdwSEVKwKv0hWa4sswJdLo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"RedMagic 9S Pro\",\n    \"description\": \"The RedMagic 9S Pro offers a fantastic price tag for its high performance components and luxury display. It's only a minor jump in CPU, but there's still plenty of power under the hood and a slimline chassis to enjoy it all in as well.\",\n    \"price\": 1000,\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDMyNjE4ODF9.AuRUkFwOt7eWbF0tqDknRyDScZ4FaSCY6CyViTBDtho",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-all-active-products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/active",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"active"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve-specific-product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/67e53db5086e06f556b966a0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"67e53db5086e06f556b966a0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDMxNTgwNzR9.lDGCbOZm1Zjt5cacTC8hCRIDtwp3r8gfN5RNf8Ua5r8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"ASUS ROG Phone 10 series\",\n    \"description\" : \"(ROG Phone 10, ROG Phone 9 Pro, and ROG Phone 9 Pro Edition) are gaming-focused phones, featuring high-end specs like Snapdragon 8 Elite processors, 165Hz AMOLED displays, and enhanced cooling systems.\",\n    \"price\": 15000,\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/67e67ab8eed1ec6514089f46/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"67e67ab8eed1ec6514089f46",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "archive-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDM4NDYzMTV9.kviu4EmRCPciLqEfysvnqF4qXTDmYZLkUSwYs1Hq7cQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/67e67ab8eed1ec6514089f46/archive",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"67e67ab8eed1ec6514089f46",
+								"archive"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "activate-product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDM4NDYzNjl9.0bmNvcjF4GWH5qUXQrZVxteirm6h3KffxfB9DqmZipQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <toekn>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/67e67ab8eed1ec6514089f46/activate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"67e67ab8eed1ec6514089f46",
+								"activate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

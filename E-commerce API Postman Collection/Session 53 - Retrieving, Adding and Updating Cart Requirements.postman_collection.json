@@ -1,0 +1,157 @@
+{
+	"info": {
+		"_postman_id": "fb85b092-e2dc-4cc7-a53c-a47a37cc01d7",
+		"name": "Session 53 - Retrieving, Adding and Updating Cart Requirements",
+		"description": "**Retrieving, Adding and Updating**\n\n**Add your credentials when you see these:**\n\n- _token_\n    \n- _id_\n    \n- _batch#_\n    \n\nsample of json body (adding your batch number):\n\n{\n\n\"batch_number\": 422\n\n}\n\n_**NOTE:**_\n\n- _**The Api-Key (in Auth), and batch# are for tracking only. It is not part of the requirements of your capstone 2.**_\n    \n- _**This is for demonstration only of your capstone 2.**_\n    \n- _**Make**_ _**sure to check the route and payload requirements and the output of each endpoint.**_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42921807"
+	},
+	"item": [
+		{
+			"name": "carts",
+			"item": [
+				{
+					"name": "get-cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzMTY3NDE4fQ.LiG9AyJFPLawhdN3pNcLpJO7pVyfTPQxzpYyv8QshqI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/cart/get-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"cart",
+								"get-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-to-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzODQ0MzgwfQ.FbJyn2KERDM2EkGLBc-J-uGtLQS1TnngZA_gCcaWYT8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"67e7ff34102bcdc11dc23d3c\",\n    \"quantity\": 2,\n    \"subtotal\": 1000,\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/cart/add-to-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"cart",
+								"add-to-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-cart-quantity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzODQ0NDU2fQ.YLtM1hXuQus8U66mlAs78FAGIBnPE1B3EDdyX_YZEYA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\": \"67e7ff34102bcdc11dc23d3c\",\n    \"newQuantity\": 4,\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/cart/update-cart-quantity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"cart",
+								"update-cart-quantity"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

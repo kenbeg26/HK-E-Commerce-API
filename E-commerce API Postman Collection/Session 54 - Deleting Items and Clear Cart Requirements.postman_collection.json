@@ -1,0 +1,186 @@
+{
+	"info": {
+		"_postman_id": "8529d2bb-4895-49cb-aaab-2564e0fc48fa",
+		"name": "Session 54 - Deleting Items and Clear Cart Requirements",
+		"description": "**Deleting Items and Clear Cart & Products - Search by name and price**\n\n**Add your credentials when you see these:**\n\n- _token_\n    \n- _id_\n    \n- _batch#_\n    \n\nsample of json body (adding your batch number):\n\n{\n\n\"batch_number\": 422\n\n}\n\n_**NOTE:**_\n\n- _**The Api-Key (in Auth), and batch# are for tracking only. It is not part of the requirements of your capstone 2.**_\n    \n- _**This is for demonstration only of your capstone 2.**_\n    \n- _**Make**_ _**sure to check the route and payload requirements and the output of each endpoint.**_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42921807"
+	},
+	"item": [
+		{
+			"name": "carts",
+			"item": [
+				{
+					"name": "remove-from-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzMjU2MDk4fQ.l9yMjYim1Bb4aGOkL2LnJZJFmUvkt7XHgcnOBWiFgxQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/cart/67e53db5086e06f556b966a0/remove-from-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"cart",
+								"67e53db5086e06f556b966a0",
+								"remove-from-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "clear-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzNTY4Mzg1fQ.pddnZEKNhcmEXpzq1GBjc5W3p92iTnN2z0poFGYMkLc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/cart/clear-cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"cart",
+								"clear-cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "search-by-name",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productName\": \"asus rog\",\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/search-by-name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"search-by-name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-by-price",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"minPrice\": 1,\n    \"maxPrice\": 100000,\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/products/search-by-price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"products",
+								"search-by-price"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

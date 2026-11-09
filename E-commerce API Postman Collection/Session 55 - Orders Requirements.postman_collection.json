@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "577e9382-be48-4574-bf37-375ee628474f",
+		"name": "Session 55 - Orders Requirements",
+		"description": "**Deleting Items and Clear Cart & Products - Search by name and price**\n\n**Add your credentials when you see these:**\n\n- _token_\n    \n- _id_\n    \n- _batch#_\n    \n\nsample of json body (adding your batch number):\n\n{\n\n\"batch_number\": 422\n\n}\n\n_**NOTE:**_\n\n- _**The Api-Key (in Auth), and batch# are for tracking only. It is not part of the requirements of your capstone 2.**_\n    \n- _**This is for demonstration only of your capstone 2.**_\n    \n- _**Make**_ _**sure to check the route and payload requirements and the output of each endpoint.**_",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42921807"
+	},
+	"item": [
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZWNjMGU2YTQ0MTkxYmY3NjNhYTAwNiIsImVtYWlsIjoia2VuYmVnb3JuaWFAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzNTY5MTY4fQ.FecNjnOS-PZRHssiRQIDU5WuRUPcS7EAHgM7Cg_G6dI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/orders/checkout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"orders",
+								"checkout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "my-orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTY5MTdlMGFmMzRlMzc2NjkyMWExZCIsImVtYWlsIjoiamFtZXNEb2VAbWFpbC5jb20iLCJpc0FkbWluIjpmYWxzZSwiaWF0IjoxNzQzNTY4ODMzfQ.9zujj1aZWVjFQQcH31LJGAecb0XPh-JRBAtslygl20U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/orders/my-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"orders",
+								"my-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all-orders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3ZTUxMTIyODQxMmU0MmU1MDc4OGEzYiIsImVtYWlsIjoiYWRtaW5AbWFpbC5jb20iLCJpc0FkbWluIjp0cnVlLCJpYXQiOjE3NDM1NzAyMDB9.nQ8SWS1eY543N055j7LGAC-l46kocv7Fvo36SUo6ZmU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer <token>, Api-Key 8mvEReXX.0RN0j4wzEaX66Pc0S88bzaLrIbwVt4TU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"batch_number\": \"496/530\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4002/b2/orders/all-orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4002",
+							"path": [
+								"b2",
+								"orders",
+								"all-orders"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
