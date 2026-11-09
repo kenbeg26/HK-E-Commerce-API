@@ -24,7 +24,7 @@ const corsOptions = {
     'http://localhost:3000',
     'http://ec2-3-15-19-15.us-east-2.compute.amazonaws.com',
     'http://zuitt-bootcamp-prod-530-8605-astano.s3-website.us-east-1.amazonaws.com',
-    'https://hk-e-commerce-client.vercel.app/'
+    'https://hk-e-commerce-client.vercel.app'
   ],
   credentials: true,
   optionsSuccessStatus: 200
